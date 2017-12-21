@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  app:
+    build:
+      context: ./
+      args:
+        NODEJS_VERSION: '8.9.1'
+        APP_PATH: /var/src/app/
+        APP_PORT: 4000
+    environment:
+      COMPOSE_HTTP_TIMEOUT: 100000
+      TZ: "Asia/Jakarta"
+    volumes:
+      - .:/var/src/app
+    ports:
+      - '4000:4000'
+    tty: true

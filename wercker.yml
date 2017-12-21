@@ -1,0 +1,9 @@
+box: node
+build:
+  steps:
+    - npm-install
+    - script:
+        name: build ENV=staging
+        code: |
+          npm run tsc
+          npm run build-staging
